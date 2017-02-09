@@ -14,11 +14,10 @@
             android:layout_gravity="bottom"
             tools:context="com.luizangel.buttoncomponenttest.MainActivity">
 
-            <Button
-            style="@style/Button.PrimaryButton"
-            android:id="@+id/request_button"
-            android:layout_gravity="bottom"
-            android:text="@string/login_button_comecar" />
+            <com.luizangel.buttoncomponenttest.views.LoginButtonView
+                android:id="@+id/request_button"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"/>
 
         </LinearLayout>
     </FrameLayout>

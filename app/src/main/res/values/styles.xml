@@ -10,7 +10,6 @@
 
     <style name="Button" parent="Base.Widget.AppCompat.Button">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">54dp</item>
     </style>
 
     <style name="Button.PrimaryButton">

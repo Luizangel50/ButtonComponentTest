@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">ButtonComponentTest</string>
 
-    <string name="login_button_comecar">COMEÇAR AGORA</string>
+    <string name="login_button_start">COMEÇAR AGORA</string>
     <string name="login_button_lendo_chip">Lendo o seu chip</string>
     <string name="login_button_solic_codigo">Solicitando código de segurança...</string>
     <string name="login_button_valid_codigo">Código de segurança validado!</string>

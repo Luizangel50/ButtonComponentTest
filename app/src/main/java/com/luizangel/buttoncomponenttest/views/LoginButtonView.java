@@ -6,183 +6,87 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.util.AttributeSet;
+import android.view.LayoutInflater;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+
+import com.luizangel.buttoncomponenttest.R;
+import com.luizangel.buttoncomponenttest.databinding.CvLoginButtonViewBinding;
 
 /**
  * Created by Luiz Angel on 2/9/2017.
  */
 
-public class LoginButtonView extends LinearLayout {
+public class LoginButtonView extends FrameLayout {
+    public static final int STATE_BUTTON = 0;
+    public static final int STATE_LOADING = 1;
+    public static final int STATE_TIMER = 2;
+
+    CvLoginButtonViewBinding binding;
     public LoginButtonView(Context context) {
         super(context);
+        init();
     }
 
     public LoginButtonView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        init();
     }
 
     public LoginButtonView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        init();
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public LoginButtonView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
+        init();
     }
 
-    @Override
-    public void setShowDividers(int showDividers) {
-        super.setShowDividers(showDividers);
+    private void init() {
+        LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        binding = CvLoginButtonViewBinding.inflate(inflater, this, true);
     }
 
-    @Override
-    public boolean shouldDelayChildPressedState() {
-        return super.shouldDelayChildPressedState();
+    public void setOnClickListener(OnClickListener listener) {
+        binding.button.setOnClickListener(listener);
     }
 
-    @Override
-    public int getShowDividers() {
-        return super.getShowDividers();
+    public void setState(int state, final Context context) {
+        switch (state) {
+            case STATE_BUTTON:
+                binding.messageContainer.setVisibility(GONE);
+                binding.button.setVisibility(VISIBLE);
+                break;
+            case STATE_LOADING:
+                showMessageContainer(context);
+        }
     }
 
-    @Override
-    public Drawable getDividerDrawable() {
-        return super.getDividerDrawable();
-    }
+    private void showMessageContainer(final Context context) {
+        binding.messageContainer.setVisibility(VISIBLE);
+        binding.button.setVisibility(INVISIBLE);
 
-    @Override
-    public void setDividerDrawable(Drawable divider) {
-        super.setDividerDrawable(divider);
-    }
+        Animation titleAnimation = AnimationUtils.loadAnimation(context, R.anim.bottom_to_center);
+        titleAnimation.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+            }
 
-    @Override
-    public void setDividerPadding(int padding) {
-        super.setDividerPadding(padding);
-    }
+            @Override
+            public void onAnimationEnd(Animation animation) {
 
-    @Override
-    public int getDividerPadding() {
-        return super.getDividerPadding();
-    }
+            }
 
-    @Override
-    protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-    }
+            @Override
+            public void onAnimationRepeat(Animation animation) {
 
-    @Override
-    public boolean isBaselineAligned() {
-        return super.isBaselineAligned();
-    }
-
-    @Override
-    public void setBaselineAligned(boolean baselineAligned) {
-        super.setBaselineAligned(baselineAligned);
-    }
-
-    @Override
-    public boolean isMeasureWithLargestChildEnabled() {
-        return super.isMeasureWithLargestChildEnabled();
-    }
-
-    @Override
-    public void setMeasureWithLargestChildEnabled(boolean enabled) {
-        super.setMeasureWithLargestChildEnabled(enabled);
-    }
-
-    @Override
-    public int getBaseline() {
-        return super.getBaseline();
-    }
-
-    @Override
-    public int getBaselineAlignedChildIndex() {
-        return super.getBaselineAlignedChildIndex();
-    }
-
-    @Override
-    public void setBaselineAlignedChildIndex(int i) {
-        super.setBaselineAlignedChildIndex(i);
-    }
-
-    @Override
-    public float getWeightSum() {
-        return super.getWeightSum();
-    }
-
-    @Override
-    public void setWeightSum(float weightSum) {
-        super.setWeightSum(weightSum);
-    }
-
-    @Override
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-    }
-
-    @Override
-    protected void onLayout(boolean changed, int l, int t, int r, int b) {
-        super.onLayout(changed, l, t, r, b);
-    }
-
-    @Override
-    public void onRtlPropertiesChanged(int layoutDirection) {
-        super.onRtlPropertiesChanged(layoutDirection);
-    }
-
-    @Override
-    public void setOrientation(int orientation) {
-        super.setOrientation(orientation);
-    }
-
-    @Override
-    public int getOrientation() {
-        return super.getOrientation();
-    }
-
-    @Override
-    public void setGravity(int gravity) {
-        super.setGravity(gravity);
-    }
-
-    @Override
-    public int getGravity() {
-        return super.getGravity();
-    }
-
-    @Override
-    public void setHorizontalGravity(int horizontalGravity) {
-        super.setHorizontalGravity(horizontalGravity);
-    }
-
-    @Override
-    public void setVerticalGravity(int verticalGravity) {
-        super.setVerticalGravity(verticalGravity);
-    }
-
-    @Override
-    public LayoutParams generateLayoutParams(AttributeSet attrs) {
-        return super.generateLayoutParams(attrs);
-    }
-
-    @Override
-    protected LayoutParams generateDefaultLayoutParams() {
-        return super.generateDefaultLayoutParams();
-    }
-
-    @Override
-    protected LayoutParams generateLayoutParams(ViewGroup.LayoutParams lp) {
-        return super.generateLayoutParams(lp);
-    }
-
-    @Override
-    protected boolean checkLayoutParams(ViewGroup.LayoutParams p) {
-        return super.checkLayoutParams(p);
-    }
-
-    @Override
-    public CharSequence getAccessibilityClassName() {
-        return super.getAccessibilityClassName();
+            }
+        });
+        binding.messageTextView.startAnimation(titleAnimation);
     }
 }

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="60dp">
+        <Button
+            android:id="@+id/button"
+            style="@style/Button.PrimaryButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/login_button_start"
+            android:textAllCaps="true"
+            android:visibility="visible"
+            />
+        <LinearLayout
+            android:id="@+id/messageContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:visibility="invisible">
+            <TextView
+                android:id="@+id/messageTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="alalalal"/>
+            <ProgressBar
+                android:layout_width="30dp"
+                android:layout_height="30dp"/>
+        </LinearLayout>
+    </FrameLayout>
+</layout>
