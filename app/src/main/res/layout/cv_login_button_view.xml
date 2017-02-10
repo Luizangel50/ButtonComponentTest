@@ -6,27 +6,85 @@
                  android:layout_height="60dp">
         <Button
             android:id="@+id/button"
-            style="@style/Button.PrimaryButton"
+            style="@style/Button.Login"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/login_button_start"
             android:textAllCaps="true"
-            android:visibility="visible"
-            />
-        <LinearLayout
+            android:visibility="visible" />
+        <FrameLayout
             android:id="@+id/messageContainer"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:visibility="invisible">
+            android:visibility="invisible"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
             <TextView
                 android:id="@+id/messageTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="alalalal"/>
+                android:text="@string/login_button_read_chip"
+                android:gravity="center_vertical"
+                android:textColor="@color/colorWhite"/>
             <ProgressBar
+                android:id="@+id/messageProgressBar"
                 android:layout_width="30dp"
-                android:layout_height="30dp"/>
-        </LinearLayout>
+                android:layout_height="match_parent"
+                android:foregroundGravity="center_vertical"
+                android:layout_gravity="end"
+                android:theme="@style/ProgressBar"
+                android:interpolator="@android:anim/bounce_interpolator"/>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/counterContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:visibility="invisible"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+            <TextView
+                android:id="@+id/counterTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/login_button_req_code"
+                android:gravity="center_vertical"
+                android:textColor="@color/colorWhite"/>
+            <TextView
+                android:id="@+id/counterSeconds"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:textColor="@color/colorOrangeDarker"
+                android:layout_gravity="end"
+                android:visibility="invisible"
+                android:textSize="30sp"/>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/validContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:visibility="invisible"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+            <TextView
+                android:id="@+id/validTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/login_button_valid_code"
+                android:gravity="center_vertical"
+                android:textColor="@color/colorWhite"/>
+
+            <ImageView
+                android:id="@+id/validImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@mipmap/ic_valid_code"
+                android:layout_gravity="end"/>
+        </FrameLayout>
     </FrameLayout>
 </layout>

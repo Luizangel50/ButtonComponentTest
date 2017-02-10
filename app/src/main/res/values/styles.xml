@@ -12,9 +12,13 @@
         <item name="android:layout_width">match_parent</item>
     </style>
 
-    <style name="Button.PrimaryButton">
-        <item name="android:background">@android:color/white</item>
-        <item name="android:textColor">@android:color/holo_orange_dark</item>
+    <style name="Button.Login">
+        <item name="android:background">@color/colorOrangeDarker</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="ProgressBar">
+        <item name="colorAccent">@color/colorOrangeDarker</item>
     </style>
 
 </resources>

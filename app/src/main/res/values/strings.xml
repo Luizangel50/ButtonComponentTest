@@ -2,8 +2,8 @@
     <string name="app_name">ButtonComponentTest</string>
 
     <string name="login_button_start">COMEÇAR AGORA</string>
-    <string name="login_button_lendo_chip">Lendo o seu chip</string>
-    <string name="login_button_solic_codigo">Solicitando código de segurança...</string>
-    <string name="login_button_valid_codigo">Código de segurança validado!</string>
+    <string name="login_button_read_chip">Lendo o seu chip</string>
+    <string name="login_button_req_code">Solicitando código de segurança...</string>
+    <string name="login_button_valid_code">Código de segurança validado!</string>
 
 </resources>

@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 binding.requestButton.setState(LoginButtonView.STATE_LOADING, context);
-                Toast.makeText(context, "lalala", Toast.LENGTH_LONG).show();
+                Toast.makeText(context, "button clicked", Toast.LENGTH_LONG).show();
             }
         });
     }
